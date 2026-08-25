@@ -35,32 +35,14 @@ limitations under the License.
 
 > Cumulatively test whether every element in a one-dimensional ndarray is truthy.
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-ext-base-ndarray-gcuevery
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var gcuevery = require( '@stdlib/blas-ext-base-ndarray-gcuevery' );
+import gcuevery from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-gcuevery@esm/index.mjs';
 ```
 
 #### gcuevery( arrays )
@@ -68,8 +50,8 @@ var gcuevery = require( '@stdlib/blas-ext-base-ndarray-gcuevery' );
 Cumulatively tests whether every element in a one-dimensional ndarray is truthy.
 
 ```javascript
-var vector = require( '@stdlib/ndarray-vector-ctor' );
-var BooleanVector = require( '@stdlib/ndarray-vector-bool' );
+import vector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-ctor@esm/index.mjs';
+import BooleanVector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-bool@esm/index.mjs';
 
 var x = vector( [ 1.0, 1.0, 0.0, 1.0 ], 'generic' );
 var out = new BooleanVector( 4 );
@@ -108,12 +90,17 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-discrete-uniform' );
-var BooleanVector = require( '@stdlib/ndarray-vector-bool' );
-var numel = require( '@stdlib/ndarray-numel' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
-var gcuevery = require( '@stdlib/blas-ext-base-ndarray-gcuevery' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-discrete-uniform@esm/index.mjs';
+import BooleanVector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-bool@esm/index.mjs';
+import numel from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-numel@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
+import gcuevery from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-gcuevery@esm/index.mjs';
 
 var x = discreteUniform( [ 10 ], 0, 1, {
     'dtype': 'generic'
@@ -125,6 +112,10 @@ console.log( ndarray2array( out ) );
 
 var z = gcuevery( [ x, out ] );
 console.log( ndarray2array( z ) );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -148,7 +139,7 @@ console.log( ndarray2array( z ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 

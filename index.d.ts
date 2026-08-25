@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { typedndarray, boolndarray } from '@stdlib/types/ndarray';
 
 /**
-* Cumulatively test whether every element in a one-dimensional ndarray is truthy.
+* Cumulatively tests whether every element in a one-dimensional ndarray is truthy.
 *
-* @module @stdlib/blas-ext-base-ndarray-gcuevery
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var vector = require( '@stdlib/ndarray-vector-ctor' );
 * var BooleanVector = require( '@stdlib/ndarray-vector-bool' );
-* var gcuevery = require( '@stdlib/blas-ext-base-ndarray-gcuevery' );
 *
 * var x = vector( [ 1.0, 1.0, 0.0, 1.0 ], 'generic' );
 * var out = new BooleanVector( 4 );
@@ -37,12 +48,9 @@
 * var bool = ( z === out );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function gcuevery( arrays: [ typedndarray<unknown>, boolndarray ] ): boolndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = gcuevery;
